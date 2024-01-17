@@ -1,5 +1,5 @@
-const url = "http://localhost:5678/api/works";
 
+const url = "http://localhost:5678/api/works";
 
 async function fetchData() {
     try {
@@ -14,18 +14,62 @@ async function fetchData() {
     }
 }
 
-async function displayData() {
-    const worksData = await fetchData()
-    console.log("worksData", worksData[2].imageUrl)
-    console.log("worksData", worksData[2].title)
-    console.log("worksData", worksData)
-
-    const newArray = worksData.map((work) => console.log("work", work))
+async function fetchDataAndDisplay() {
+    const data = await fetchData();
+    // console.log(data)
+    displayData(data);
 }
 
-displayData()
+fetchDataAndDisplay();
+
+ function getData() {
+    const worksData =  fetchData()
+    // console.log(worksData)
+    return worksData
+}
 
 
+function displayData(data) {
+
+    const galleryDom = document.getElementsByClassName('gallery')
+
+    console.log("galery", galleryDom[0])
+
+    data.map((work) => {
+
+        const newFigure = document.createElement("figure")
+        const newImg = document.createElement("img")
+        newImg.src = work.imageUrl
+        newFigure.appendChild(newImg)
+        const newFigcaption = document.createElement("figcaption")
+        newFigcaption.innerHTML = work.title
+        newFigure.appendChild(newFigcaption)
+        galleryDom[0].appendChild(newFigure)
+    })
+}
+
+
+
+async function filterData(filterValue) {
+    const data = await fetchData();
+
+    const galleryDom = document.getElementsByClassName('gallery')
+    while (galleryDom[0].firstChild) {
+        galleryDom[0].removeChild(galleryDom[0].firstChild);
+    }
+
+    if (filterValue === "Hôtels &amp; restaurants") 
+        filterValue = "Hotels & restaurants"
+
+    if (filterValue === "Tous") 
+        displayData(data)
+    
+    else {
+        const filteredArray = data.filter((work) => work.category.name === filterValue)
+        displayData(filteredArray)
+    }
+
+}
 
 
 function filterClick(event) {
@@ -37,4 +81,7 @@ function filterClick(event) {
     // Change the clicked button color to white
     event.target.style.color = 'white';
     event.target.style.backgroundColor = '#1D6154';
+
+    const filterValue = event.target.innerHTML
+    filterData(filterValue)
 }
