@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+:root {
+    --green-color: #1D6154;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -82,21 +86,26 @@ h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: var(--green-color)
 }
 nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
-
 }
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
 }
 
+nav a {
+	text-decoration: none;
+	color: black;
+}
+
 li:hover {
 	color: #B1663C;
+	cursor: pointer;
 }
 #introduction {
 	display: flex;
@@ -139,11 +148,10 @@ li:hover {
 }
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
 #contact > * {
 	text-align: center;
-
 }
 #contact h2{
 	margin-bottom: 20px;
@@ -173,7 +181,7 @@ input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
-	background-color: #1D6154;
+	background-color: var(--green-color);
 	margin : 2em auto ;
 	width: 180px;
 	text-align: center;
@@ -194,13 +202,18 @@ footer nav ul {
 }
 
 .filter button {
-	color: #1D6154;
+	color: var(--green-color);
     border-radius: 60px;
     padding: 10px 20px;
-    border: 1px solid #1D6154;
+    border: 1px solid var(--green-color);
 	background-color: white;
 }
 
 .filter button:hover {
+	cursor: pointer;
+}
+
+.sophie {
+	text-decoration: none;
 	cursor: pointer;
 }

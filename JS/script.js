@@ -33,10 +33,7 @@ function displayData(data) {
 
     const galleryDom = document.getElementsByClassName('gallery')
 
-    console.log("galery", galleryDom[0])
-
     data.map((work) => {
-
         const newFigure = document.createElement("figure")
         const newImg = document.createElement("img")
         newImg.src = work.imageUrl
@@ -58,17 +55,16 @@ async function filterData(filterValue) {
         galleryDom[0].removeChild(galleryDom[0].firstChild);
     }
 
-    if (filterValue === "Hôtels &amp; restaurants") 
+    if (filterValue === "Hôtels &amp; restaurants")
         filterValue = "Hotels & restaurants"
 
-    if (filterValue === "Tous") 
+    if (filterValue === "Tous")
         displayData(data)
     
     else {
         const filteredArray = data.filter((work) => work.category.name === filterValue)
         displayData(filteredArray)
     }
-
 }
 
 
@@ -84,4 +80,8 @@ function filterClick(event) {
 
     const filterValue = event.target.innerHTML
     filterData(filterValue)
+}
+
+function test() {
+    console.log("test")
 }
