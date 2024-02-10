@@ -9,10 +9,6 @@
 	margin-top: 200px;
 }
 
-
-
-
-
 h1, h2, form, label,html, body, div, span,footer, header, ul, li, nav {
     margin: 0;
 	padding: 0;
@@ -130,4 +126,21 @@ input[type="submit"]{
 .sophie {
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.loginButton {
+	height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: var(--green-color);
+    margin: 2em auto;
+    width: 180px;
+    text-align: center;
+    border-radius: 60px;
+    margin-left: 35%;
+    cursor: pointer;
 }
