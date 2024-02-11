@@ -12,7 +12,6 @@ export function logout() {
     modifyDom.style.display = 'none'
     editionDom.style.display = 'none'
 
-
     loginDom.removeEventListener('click', logout);
     loginDom.addEventListener('click', addHref);
 }

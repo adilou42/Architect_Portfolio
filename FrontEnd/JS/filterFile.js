@@ -1,7 +1,5 @@
 import { fetchWorkData } from "./fetchDataFile.js"
-
 import { displayData } from "./displayWork.js"
-
 
 async function filterData(filterValue) {
     const data = await fetchWorkData();

@@ -1,5 +1,4 @@
 import { fetchWorkData, fetchCategories } from "./fetchDataFile.js";
-
 import { filterClick } from "./filterFile.js"
 
 export async function displayFilterButtons() {
@@ -26,7 +25,6 @@ export async function displayFilterButtons() {
 }
 
 export function displayData(data) {
-
 
     const galleryDom = document.getElementsByClassName('gallery')
 

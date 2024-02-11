@@ -1,7 +1,6 @@
 const loginDom = document.querySelector(".loginButton");
 loginDom.addEventListener('click', login)
 
-
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 
@@ -42,4 +41,3 @@ export  async function login() {
     }
     return data 
 }
-
