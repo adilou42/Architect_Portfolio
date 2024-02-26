@@ -271,7 +271,7 @@ a {
 	display: none;
     position: absolute;
     background-color: white;
-    width: 550px;
+    width: 575px;
     height: 600px;
     top: 6%;
     left: 25%;
@@ -331,10 +331,10 @@ a {
 .underline {
 	background: #B3B3B3;
     height: 3px;
-    width: 440px;
+    width: 466px;
 }
 
-.addPhoto {
+.ajoutPhoto {
 	height: 50px;
     font-size: 1.2em;
     border: none;
@@ -347,4 +347,125 @@ a {
     width: 240px;
     text-align: center;
     border-radius: 60px;
+	cursor: pointer;
+}
+
+.modal-photo {
+	display: none;
+    position: absolute;
+    background-color: white;
+    width: 550px;
+    height: 600px;
+    top: 6%;
+    left: 25%;
+	border-radius: 10px;
+}
+
+.fa-arrow-left {
+	position: absolute;
+	top: 20px;
+    left: 30px;
+	cursor: pointer;
+	font-size: large;
+}
+
+.modal-edit {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 50px;
+	gap: 20px;
+}
+
+.modal-edit h3 {
+	font-size: x-large;
+}
+
+.input-photo {
+	width: 420px;
+	height: 200px;
+	background-color: #E8F1F6;
+}
+
+.block-add-photo {
+	display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-evenly;
+	align-items: center;
+	margin-top: 10px;
+}
+
+#new-image {
+	height: 200px;
+	display: none;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.fa-image {
+	color: #B9C5CC;
+	font-size: 70px;
+}
+
+.input-button {
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	font-family: 'Syne';
+    font-weight: 700;
+    background-color: #B9C5CC;
+    width: 160px;
+    border-radius: 60px;
+    color: #2F6785;
+	cursor: pointer;
+	padding: 13px;
+}
+
+/* .input-button button {
+	margin-top: 8px;
+    background: none;
+    border: none;
+    color: #2F6785;
+    font-size: medium;
+} */
+
+.modal-titre {
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+	width: 93%;
+	gap: 10px;
+}
+
+.modal-titre p {
+	display: flex;
+}
+
+.modal-titre input, .modal-titre select {
+	outline: none;
+	height: 30px;
+    border: none;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.underline-modal {
+	background: #B3B3B3;
+    height: 2px;
+    width: 424px;
+	margin-top: 10px;
+}
+
+.input-button-modal {
+	height: 40px;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #A7A7A7;
+    width: 200px;
+    border-radius: 60px;
+	/* cursor: none; */
+	margin-top: 10px;
 }

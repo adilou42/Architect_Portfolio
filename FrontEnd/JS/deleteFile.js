@@ -4,6 +4,8 @@ const photogridDom = document.getElementsByClassName("photo-grid")
 const galleryDom = document.getElementsByClassName('gallery')
 const editDom = document.querySelector(".edit")
 const overlayDom = document.querySelector(".overlay")
+const modalPhotoDom = document.querySelector(".modal-photo")
+const selectDom = document.getElementById("category")
 
 export async function fetchGalerieAndDisplay() {
     const data = await fetchWorkData();
@@ -35,9 +37,13 @@ function displayWorkGalerie(data) {
 
 export function cancel() {
     editDom.style.display = 'none'
+    modalPhotoDom.style.display = 'none'
     overlayDom.style.background = 'rgba(0, 0, 0, 0)'
     while (photogridDom[0].firstChild) {
         photogridDom[0].removeChild(photogridDom[0].firstChild);
+    }
+    while (selectDom.firstChild) {
+        selectDom.removeChild(selectDom.firstChild);
     }
 }
 
@@ -60,12 +66,13 @@ function deleteWork(id) {
     })
     .then(response => {
         if (!response.ok) {
+            // console.log(response.status)
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return response.text().then(text => text ? JSON.parse(text) : {})
+        // return response.text().then(text => text ? JSON.parse(text) : {})
     })
     .then(data => {
-        // console.log("item deleted")
+        console.log("item deleted")
         // Handle the response data here
     })
     .catch(error => {
