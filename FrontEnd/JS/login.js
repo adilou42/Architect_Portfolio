@@ -1,14 +1,11 @@
 const loginDom = document.querySelector(".loginButton");
 loginDom.addEventListener('click', login)
-
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
-
 
 export  async function login() {
     const emailValue = emailInput.value
     const passwordValue = passwordInput.value
-    
     const response = await fetch("http://localhost:5678/api/users/login", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         

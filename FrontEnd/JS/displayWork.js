@@ -31,6 +31,7 @@ export function displayData(data) {
     data.map((work) => {
         const newFigure = document.createElement("figure")
         const newImg = document.createElement("img")
+        newImg.classList.add("work-photo")
         newImg.src = work.imageUrl
         newFigure.appendChild(newImg)
         const newFigcaption = document.createElement("figcaption")

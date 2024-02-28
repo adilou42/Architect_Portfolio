@@ -1,5 +1,4 @@
 const urlWorks = "http://localhost:5678/api/works";
-
 const urlCategories = "http://localhost:5678/api/categories";
 
 export async function fetchWorkData() {

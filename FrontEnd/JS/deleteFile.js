@@ -6,6 +6,8 @@ const editDom = document.querySelector(".edit")
 const overlayDom = document.querySelector(".overlay")
 const modalPhotoDom = document.querySelector(".modal-photo")
 const selectDom = document.getElementById("category")
+const sophiePhotoDom = document.querySelector('.sophie-photo')
+const formDom = document.querySelector('.form')
 
 export async function fetchGalerieAndDisplay() {
     const data = await fetchWorkData();
@@ -36,6 +38,14 @@ function displayWorkGalerie(data) {
 }
 
 export function cancel() {
+    const workPhotoDom = document.querySelectorAll('.work-photo')
+    workPhotoDom.forEach((photo) => {
+        photo.style.opacity = '1'
+    })
+    
+    sophiePhotoDom.style.opacity = '1'
+    formDom.style.opacity = '1'
+
     editDom.style.display = 'none'
     modalPhotoDom.style.display = 'none'
     overlayDom.style.background = 'rgba(0, 0, 0, 0)'
@@ -66,7 +76,6 @@ function deleteWork(id) {
     })
     .then(response => {
         if (!response.ok) {
-            // console.log(response.status)
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         // return response.text().then(text => text ? JSON.parse(text) : {})
