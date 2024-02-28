@@ -250,7 +250,6 @@ footer nav ul {
 	height: 40px;
 	justify-content: center;
 	align-items: center;
-	/* display: none; */
 }
 
 .edition i {
@@ -276,6 +275,7 @@ a {
     top: 6%;
     left: 25%;
 	border-radius: 10px;
+	z-index: 10;
 }
 
 .fa-x {
@@ -359,6 +359,7 @@ a {
     top: 6%;
     left: 25%;
 	border-radius: 10px;
+	z-index: 10;
 }
 
 .fa-arrow-left {
@@ -468,4 +469,8 @@ a {
     border-radius: 60px;
 	/* cursor: none; */
 	margin-top: 10px;
+}
+
+.work-photo {
+	z-index: 1;
 }
